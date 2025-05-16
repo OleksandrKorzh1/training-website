@@ -3,18 +3,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Photo() {
   const images = [
-    { src: '/images/1200px-haas-in-het-grasjpg.webp', alt: 'Зайці в траві' },
-    { src: '/images/1200px-hasebeioberwerbejpg.webp', alt: 'Зайці в полі' },
-    { src: '/images/european-hare-6121jpg.webp', alt: 'Європейський заєць' },
-    { src: '/images/fFKuESpf7VTCGBNPscig.webp', alt: 'Зайці на лузі' },
-    { src: '/images/halljnes.webp', alt: 'Зайці в лісі' },
-    { src: '/images/zu6YRoYqGYVyExZ54dDT.webp', alt: 'Зайці на лузі' }
+    { src: '/images/tapir2.jpg', alt: 'Тапір1' },
+    { src: '/images/tapir_carusel.jpg', alt: 'Тапір2' },
+    { src: '/images/tapir_3.jpg', alt: 'Тапір3' },
+    { src: '/images/tapir4.jpg', alt: 'Тапір4' },
+    { src: '/images/tapir5.webp', alt: 'Тапір5' },
+    { src: '/images/tapir6.jpg', alt: 'Тапір6' }
   ];
 
   return (
     <main className="container px-4 py-4 flex-grow-1">
       <article>
-        <h2 className="h2 text-success mb-4">Фотогалерея зайців</h2>
+        <h2 className="h2 text-success mb-4">Фотогалерея тапірів</h2>
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-indicators">
             {images.map((_, index) => (
