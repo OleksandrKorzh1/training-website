@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 
 // Інтерфейс для об'єкта "Заєць"
-interface IRabbit {
+interface ITapir {
     name: string; // Ім'я зайця
     age: number; // Вік зайця у роках
     height: number; // Висота зайця в сантиметрах
@@ -9,10 +9,11 @@ interface IRabbit {
     gender: 'male' | 'female'; // Стать зайця: 'male' - самець, 'female' - самка
     description?: string; // Опис зайця (необов'язкове поле)
     dateAdded: Date; // Дата додавання запису до бази даних
+    feeding: 'fruits' | 'leaf' | 'algae' | 'berries';
 }
 
 // Схема MongoDB для моделі "Заєць"
-const rabbitSchema = new Schema<IRabbit>({
+const tapirSchema = new Schema<ITapir>({
     name: {
         type: String,
         required: true, // Поле є обов'язковим
@@ -39,8 +40,13 @@ const rabbitSchema = new Schema<IRabbit>({
         type: Date,
         default: Date.now, // Значення за замовчуванням - поточна дата і час
     },
+    feeding: {
+        type: String,
+        required: true, // Поле є обов'язковим
+        enum: ['fruits', 'leaf', 'algae', 'berries'],
+    },
 });
 
 // Створення моделі Mongoose на основі схеми
-export const Rabbit = model<IRabbit>('Rabbit', rabbitSchema);
-export type { IRabbit }; // Експортуємо інтерфейс для використання в інших файлах
+export const Tapir = model<ITapir>('Tapir', tapirSchema);
+export type { ITapir }; // Експортуємо інтерфейс для використання в інших файлах

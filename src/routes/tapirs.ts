@@ -1,17 +1,17 @@
 import { Router, Request, Response } from 'express';
 import { container } from '../config/container';
-import { RabbitRepository } from '../repositories/RabbitRepository';
+import { TapirRepository } from '../repositories/TapirRepository';
 
 // Створюємо новий обробник HTTP-запитів Express
 const router = Router();
 // Отримуємо екземпляр репозиторію зайців з контейнера інверсії залежностей
-const rabbitRepository = container.get(RabbitRepository);
+const tapirsRepository = container.get(TapirRepository);
 
 // Обробка HTTP-запиту GET / - отримання всіх записів зайців
 router.get('/', (async (_req: Request, res: Response) => {
     try {
         // Отримуємо всі записи зайців з бази даних через репозиторій
-        const rabbits = await rabbitRepository.findAll();
+        const rabbits = await tapirsRepository.findAll();
         res.json(rabbits);
     } catch (error) {
         // Обробка помилки
@@ -24,7 +24,7 @@ router.get('/', (async (_req: Request, res: Response) => {
 router.get('/:id', (async (req: Request, res: Response) => {
     try {
         // Пошук зайця за ідентифікатором
-        const rabbit = await rabbitRepository.findById(req.params.id);
+        const rabbit = await tapirsRepository.findById(req.params.id);
         if (rabbit) {
             res.json(rabbit);
         } else {
@@ -42,7 +42,7 @@ router.get('/:id', (async (req: Request, res: Response) => {
 router.post('/', (async (req: Request, res: Response) => {
     try {
         // Створюємо новий запис зайця з даних запиту
-        const newRabbit = await rabbitRepository.create(req.body);
+        const newRabbit = await tapirsRepository.create(req.body);
         // Повертаємо статус 201 (Created) і дані створеного зайця
         res.status(201).json(newRabbit);
     } catch (error) {
@@ -67,7 +67,7 @@ router.put('/:id', (async (req: Request, res: Response) => {
         }
 
         // Оновлюємо зайця з вказаним ID
-        const rabbit = await rabbitRepository.update(req.params.id, req.body);
+        const rabbit = await tapirsRepository.update(req.params.id, req.body);
         if (rabbit) {
             return res.json(rabbit);
         } else {
@@ -85,7 +85,7 @@ router.put('/:id', (async (req: Request, res: Response) => {
 router.patch('/:id', (async (req: Request, res: Response) => {
     try {
         // Часткове оновлення запису зайця - передаються лише ті поля, які потрібно змінити
-        const rabbit = await rabbitRepository.patch(req.params.id, req.body);
+        const rabbit = await tapirsRepository.patch(req.params.id, req.body);
         if (rabbit) {
             res.json(rabbit);
         } else {
@@ -103,7 +103,7 @@ router.patch('/:id', (async (req: Request, res: Response) => {
 router.delete('/:id', (async (req: Request, res: Response) => {
     try {
         // Видаляємо дані про зайця за ID
-        const rabbit = await rabbitRepository.delete(req.params.id);
+        const rabbit = await tapirsRepository.delete(req.params.id);
         if (rabbit) {
             // У разі успіху повертаємо повідомлення про видалення
             res.json({ message: 'Запис про зайця видалено' });

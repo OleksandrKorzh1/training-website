@@ -4,9 +4,9 @@ export const swaggerSpec = {
     openapi: '3.0.0',
     // Загальна інформація про API
     info: {
-        title: 'API Сайту про Зайців',
+        title: 'API Сайту про ',
         version: '1.0.0',
-        description: 'Документація API для Сайту про Зайців',
+        description: 'Документація API для Сайту про Тапірів',
     },
     // Налаштування серверів для тестування API
     servers: [
@@ -20,18 +20,18 @@ export const swaggerSpec = {
     ],
     // Визначення кінцевих точок (endpoints) REST API та операцій з ними
     paths: {
-        '/api/rabbits': {
+        '/api/tapirs': {
             // GET запит для отримання всіх зайців
             get: {
                 summary: 'Отримати всіх зайців',
                 responses: {
                     '200': {
-                        description: 'Список всіх зайців',
+                        description: 'Список всіх тапірів',
                         content: {
                             'application/json': {
                                 schema: {
                                     type: 'array',
-                                    items: { $ref: '#/components/schemas/Rabbit' },
+                                    items: { $ref: '#/components/schemas/Tapirs' },
                                 },
                             },
                         },
@@ -41,21 +41,21 @@ export const swaggerSpec = {
 
             // POST запит для створення нового зайця
             post: {
-                summary: 'Створити нового зайця',
+                summary: 'Створити нового тапіра',
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Tapirs' },
                         },
                     },
                 },
                 responses: {
                     '201': {
-                        description: "Створений об'єкт зайця",
+                        description: "Створений об'єкт тапіра",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Tapirs' },
                             },
                         },
                     },
@@ -64,111 +64,111 @@ export const swaggerSpec = {
         },
 
         // Операції для конкретного зайця за ID
-        '/api/rabbits/{id}': {
-            // GET запит для отримання зайця за ID
+        '/api/tapirs/{id}': {
+            // GET запит для отримання тапіра за ID
             get: {
-                summary: 'Отримати зайця за ID',
+                summary: 'Отримати тапіра за ID',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID тапіра',
                     },
                 ],
                 responses: {
                     '200': {
-                        description: "Об'єкт зайця",
+                        description: "Об'єкт тапіра",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Tapirs' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Тапіра не знайдено' },
                 },
             },
 
             // PUT запит для повного оновлення зайця за ID
             put: {
-                summary: 'Повністю оновити зайця',
+                summary: 'Повністю оновити тапіра',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID тапіра',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Tapirs' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт тапіра",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Tapirs' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Тапіра не знайдено' },
                 },
             },
             // PATCH запит для часткового оновлення зайця за ID
             patch: {
-                summary: 'Частково оновити зайця',
+                summary: 'Частково оновити тапіра',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID тапіра',
                     },
                 ],
                 requestBody: {
                     required: true,
                     content: {
                         'application/json': {
-                            schema: { $ref: '#/components/schemas/Rabbit' },
+                            schema: { $ref: '#/components/schemas/Tapirs' },
                         },
                     },
                 },
                 responses: {
                     '200': {
-                        description: "Оновлений об'єкт зайця",
+                        description: "Оновлений об'єкт тапіра",
                         content: {
                             'application/json': {
-                                schema: { $ref: '#/components/schemas/Rabbit' },
+                                schema: { $ref: '#/components/schemas/Tapirs' },
                             },
                         },
                     },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Тапіра не знайдено' },
                 },
             },
             // DELETE запит для видалення даних про зайця за ID
             delete: {
-                summary: 'Видалити дані про зайця',
+                summary: 'Видалити дані про тапіра',
                 parameters: [
                     {
                         in: 'path',
                         name: 'id',
                         required: true,
                         schema: { type: 'string' },
-                        description: 'ID зайця',
+                        description: 'ID тапіра',
                     },
                 ],
                 responses: {
                     '200': { description: 'Повідомлення про успішне видалення' },
-                    '404': { description: 'Зайця не знайдено' },
+                    '404': { description: 'Тапіра не знайдено' },
                 },
             },
         },
@@ -179,34 +179,39 @@ export const swaggerSpec = {
         // Схеми даних
         schemas: {
             // Схема об'єкта Заєць
-            Rabbit: {
+            Tapirs: {
                 type: 'object',
-                required: ['name', 'age', 'height', 'weight', 'gender'],
+                required: ['name', 'age', 'height', 'weight', 'gender', 'feeding'],
                 properties: {
                     name: {
                         type: 'string',
-                        description: "Ім'я зайця",
+                        description: "Ім'я тапіра",
                     },
                     age: {
                         type: 'number',
-                        description: 'Вік зайця у роках',
+                        description: 'Вік тапіра у роках',
                     },
                     height: {
                         type: 'number',
-                        description: 'Висота зайця в сантиметрах',
+                        description: 'Висота тапіра в сантиметрах',
                     },
                     weight: {
                         type: 'number',
-                        description: 'Вага зайця в кілограмах',
+                        description: 'Вага тапіра в кілограмах',
                     },
                     gender: {
                         type: 'string',
                         enum: ['male', 'female'],
-                        description: 'Стать зайця',
+                        description: 'Стать тапіра',
+                    },
+                    feeding: {
+                        type: 'string',
+                        enum: ['fruits', 'leaf', 'algae', 'berries'],
+                        description: 'Стать тапіра',
                     },
                     description: {
                         type: 'string',
-                        description: "Опис зайця (необов'язкове поле)",
+                        description: "Опис тапіра (необов'язкове поле)",
                     },
                 },
             },
