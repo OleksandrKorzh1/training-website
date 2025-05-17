@@ -5,81 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ареал тапірів">
   <title>Ареал тапірів</title>
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .custom-green-theme {
+        @apply bg-green-50;
+      }
+      .custom-green-theme a:hover {
+        @apply text-green-800 underline;
+      }
+      .accordion-item {
+        @apply mb-2 border border-gray-200 rounded-lg overflow-hidden;
+      }
+      .accordion-button {
+        @apply w-full p-4 text-left font-medium bg-green-100 hover:bg-green-200 transition-colors;
+      }
+      .accordion-body {
+        @apply p-4 bg-white;
+      }
+    }
+  </style>
 </head>
 <body class="custom-green-theme">
-  <header class="text-center bg-success text-white py-3">
-    <h1>Ареал тапірів</h1>
-    <nav class="nav justify-content-center">
-      <a href="../index.html" class="nav-link text-white">Головна</a>
-      <a href="morphology.html" class="nav-link text-white">Зовнішній вигляд</a>
-      <a href="nutrition.html" class="nav-link text-white">Харчування</a>
-      <a href="photo.html" class="nav-link text-white">Фотогалерея</a>
+  <header class="text-center bg-green-600 text-white py-3 shadow-md">
+    <h1 class="text-3xl font-bold mb-2">Ареал тапірів</h1>
+    <nav class="flex flex-wrap justify-center gap-4 md:gap-6 py-2">
+      <a href="../index.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Головна</a>
+      <a href="morphology.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Зовнішній вигляд</a>
+      <a href="nutrition.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Харчування</a>
+      <a href="photo.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Фотогалерея</a>
     </nav>
   </header>
 
-  <main class="container py-4">
-    <article>
-      <h2>Ареал тапірів</h2>
-      <p>Різні види тапірів мешкають у тропічних лісах Південної та Центральної Америки, а також Південно-Східної Азії.</p>
+  <main class="container mx-auto px-4 py-6 max-w-4xl">
+    <article class="bg-white p-6 rounded-lg shadow-sm">
+      <h2 class="text-2xl font-semibold text-green-600 mb-4">Ареал тапірів</h2>
+      <p class="text-gray-700 mb-6">Різні види тапірів мешкають у тропічних лісах Південної та Центральної Америки, а також Південно-Східної Азії.</p>
 
-      <div class="accordion" id="tapirHabitat">
+      <div class="space-y-3" id="tapirHabitat">
         <!-- Америка -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAmerica">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAmerica" aria-expanded="true" aria-controls="collapseAmerica">
-              🌎 Америка
-            </button>
-          </h2>
-          <div id="collapseAmerica" class="accordion-collapse collapse show" aria-labelledby="headingAmerica" data-bs-parent="#tapirHabitat">
-            <div class="accordion-body">
-              <strong>Центральна Америка:</strong>
-              <ul>
-                <li>Мексика</li>
-                <li>Гватемала</li>
-                <li>Коста-Рика</li>
-                <li>Панама</li>
-              </ul>
-              <strong>Південна Америка:</strong>
-              <ul>
-                <li>Бразилія</li>
-                <li>Перу</li>
-                <li>Колумбія</li>
-                <li>Венесуела</li>
-                <li>Еквадор</li>
-              </ul>
-            </div>
+        <details class="accordion-item" open>
+          <summary class="accordion-button flex items-center justify-between">
+            <span>🌎 Америка</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="accordion-body">
+            <strong class="text-green-600">Центральна Америка:</strong>
+            <ul class="list-disc pl-5 mt-2 mb-4 space-y-1">
+              <li>Мексика</li>
+              <li>Гватемала</li>
+              <li>Коста-Рика</li>
+              <li>Панама</li>
+            </ul>
+            <strong class="text-green-600">Південна Америка:</strong>
+            <ul class="list-disc pl-5 mt-2 space-y-1">
+              <li>Бразилія</li>
+              <li>Перу</li>
+              <li>Колумбія</li>
+              <li>Венесуела</li>
+              <li>Еквадор</li>
+            </ul>
           </div>
-        </div>
+        </details>
 
         <!-- Азія -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingAsia">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAsia" aria-expanded="false" aria-controls="collapseAsia">
-              🌏 Азія
-            </button>
-          </h2>
-          <div id="collapseAsia" class="accordion-collapse collapse" aria-labelledby="headingAsia" data-bs-parent="#tapirHabitat">
-            <div class="accordion-body">
-              <strong>Південно-Східна Азія:</strong>
-              <ul>
-                <li>Малайзія</li>
-                <li>Таїланд</li>
-                <li>Індонезія</li>
-                <li>М'янма</li>
-              </ul>
-              <p>Тут мешкає <strong>малайський тапір</strong> — найбільший вид, із характерним чорно-білим забарвленням.</p>
-            </div>
+        <details class="accordion-item">
+          <summary class="accordion-button flex items-center justify-between">
+            <span>🌏 Азія</span>
+            <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="accordion-body">
+            <strong class="text-green-600">Південно-Східна Азія:</strong>
+            <ul class="list-disc pl-5 mt-2 mb-4 space-y-1">
+              <li>Малайзія</li>
+              <li>Таїланд</li>
+              <li>Індонезія</li>
+              <li>М'янма</li>
+            </ul>
+            <p class="text-gray-700">Тут мешкає <strong class="text-green-600">малайський тапір</strong> — найбільший вид, із характерним чорно-білим забарвленням.</p>
           </div>
-        </div>
+        </details>
       </div>
     </article>
   </main>
 
-  <footer class="text-center bg-dark text-white py-2">
+  <footer class="text-center bg-gray-800 text-white py-3 mt-6">
     <p>&copy; 2025 Сайт про тапірів</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

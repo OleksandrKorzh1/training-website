@@ -3,49 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Зовнішній вигляд зайців">
-  <title>Зовнішній вигляд зайців</title>
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Зовнішній вигляд тапірів">
+  <title>Зовнішній вигляд тапірів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .custom-green-theme {
+        @apply bg-green-50;
+      }
+      .custom-green-theme a:hover {
+        @apply text-green-800 underline;
+      }
+    }
+  </style>
 </head>
 <body class="custom-green-theme">
-  <header class="text-center bg-success text-white py-3">
-    <h1>Зовнішній вигляд тапірів</h1>
-    <nav class="nav justify-content-center">
-      <a href="../index.html" class="nav-link text-white">Головна</a>
-      <a href="nutrition.html" class="nav-link text-white">Харчування</a>
-      <a href="population.html" class="nav-link text-white">Ареал</a>
-      <a href="photo.html" class="nav-link text-white">Фотогалерея</a>
+  <header class="text-center bg-green-600 text-white py-3 shadow-md">
+    <h1 class="text-3xl font-bold mb-2">Зовнішній вигляд тапірів</h1>
+    <nav class="flex flex-wrap justify-center gap-4 md:gap-6 py-2">
+      <a href="../index.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Головна</a>
+      <a href="nutrition.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Харчування</a>
+      <a href="population.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Ареал</a>
+      <a href="photo.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Фотогалерея</a>
     </nav>
   </header>
 
-  <main class="container py-4">
-    <article>
-      <section>
-        <h2>Зовнішній вигляд тапірів</h2>
-        <p>Тапіри мають масивне тіло, короткі міцні ноги та округлу спину. Найхарактерніша риса — гнучкий хобот, який використовується для захоплення їжі. Забарвлення варіюється: малайський тапір має чорно-білий окрас, а американські — темно-коричневі або сірі. Маленькі тапіри народжуються зі смугастим камуфляжним візерунком.</p>
+  <main class="container mx-auto px-4 py-6 max-w-4xl">
+    <article class="bg-white p-6 rounded-lg shadow-sm">
+      <section class="mb-6">
+        <h2 class="text-2xl font-semibold text-green-600 mb-3">Зовнішній вигляд тапірів</h2>
+        <p class="text-gray-700">Тапіри мають масивне тіло, короткі міцні ноги та округлу спину. Найхарактерніша риса — гнучкий хобот, який використовується для захоплення їжі. Забарвлення варіюється: малайський тапір має чорно-білий окрас, а американські — темно-коричневі або сірі. Маленькі тапіри народжуються зі смугастим камуфляжним візерунком.</p>
       </section>
-      <section>
-       <section> 
-        <p><strong>Особливості будови тапірів:</strong></p>
-        <ul>
-          <li>Гнучкий хобот — подовжена верхня губа та ніс, використовується як хватальний орган.</li>
-          <li>Копитні кінцівки: на передніх ногах — 4 пальці, на задніх — 3 пальці.</li>
-          <li>Великі щелепи з потужними зубами для пережовування волокнистої рослинності.</li>
-          <li>Невеликі круглі вуха, добре пристосовані до лісового середовища.</li>
-          <li>Маленькі очі, з добре розвиненим нічним зором.</li>
-          <li>Товста шкіра для захисту в лісовій гущавині та від укусів хижаків.</li>
+      
+      <section class="mb-6">
+        <p class="font-bold text-gray-800 mb-3">Особливості будови тапірів:</p>
+        <ul class="space-y-2 list-disc pl-5">
+          <li class="text-gray-700">Гнучкий хобот — подовжена верхня губа та ніс, використовується як хватальний орган.</li>
+          <li class="text-gray-700">Копитні кінцівки: на передніх ногах — 4 пальці, на задніх — 3 пальці.</li>
+          <li class="text-gray-700">Великі щелепи з потужними зубами для пережовужування волокнистої рослинності.</li>
+          <li class="text-gray-700">Невеликі круглі вуха, добре пристосовані до лісового середовища.</li>
+          <li class="text-gray-700">Маленькі очі, з добре розвиненим нічним зором.</li>
+          <li class="text-gray-700">Товста шкіра для захисту в лісовій гущавині та від укусів хижаків.</li>
         </ul>
       </section>
+      
       <figure class="text-center">
-        <img src="../images/tapir_budowa.jpg" alt="Молодий тапір" class="img-fluid rounded my-4">
-        <figcaption class="text-muted">Молодий тапір</figcaption>
+        <img src="../images/tapir_budowa.jpg" alt="Молодий тапір" class="mx-auto rounded-lg shadow-md my-4 max-w-full h-auto">
+        <figcaption class="text-gray-500 italic">Молодий тапір</figcaption>
       </figure>
     </article>
   </main>
 
-  <footer class="text-center bg-dark text-white py-2">
-    <p>&copy; 2025 Сайт про зайців</p>
+  <footer class="text-center bg-gray-800 text-white py-3 mt-6">
+    <p>&copy; 2025 Сайт про тапірів</p>
   </footer>
 </body>
 </html>

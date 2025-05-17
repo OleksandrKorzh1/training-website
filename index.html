@@ -5,49 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Сайт про тапірів">
   <title>Сайт про тапірів</title>
-  <link href="css/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer components {
+      .custom-green-theme {
+        @apply bg-green-50;
+      }
+      .custom-green-theme a:hover {
+        @apply text-green-800 underline;
+      }
+    }
+  </style>
 </head>
 <body class="custom-green-theme">
-  <header class="text-center bg-success text-white py-3">
-    <h1>Все про тапірів</h1>
-    <nav class="nav justify-content-center">
-      <a href="pages/morphology.html" class="nav-link text-white">Зовнішній вигляд</a>
-      <a href="pages/nutrition.html" class="nav-link text-white">Харчування</a>
-      <a href="pages/population.html" class="nav-link text-white">Ареал</a>
-      <a href="pages/photo.html" class="nav-link text-white">Фотогалерея</a>
+  <header class="text-center bg-green-600 text-white py-3 shadow-md">
+    <h1 class="text-3xl font-bold mb-2">Все про тапірів</h1>
+    <nav class="flex flex-wrap justify-center gap-4 md:gap-6 py-2">
+      <a href="pages/morphology.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Зовнішній вигляд</a>
+      <a href="pages/nutrition.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Харчування</a>
+      <a href="pages/population.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Ареал</a>
+      <a href="pages/photo.html" class="text-white hover:bg-green-700 px-3 py-1 rounded transition-colors">Фотогалерея</a>
     </nav>
   </header>
 
-  <main class="container py-4">
-    <section>
-      <h2 class="h2 text-success">Ласкаво просимо!</h2>
-      <p>Вітаємо на сайті про тапірів! Дізнайтеся більше про їхню морфологію, харчування та популяцію, відвідавши відповідні розділи.</p>
+  <main class="container mx-auto px-4 py-6 max-w-4xl">
+    <section class="bg-white p-6 rounded-lg shadow-sm">
+      <h2 class="text-2xl font-semibold text-green-600 mb-3">Ласкаво просимо!</h2>
+      <p class="text-gray-700 mb-4">Вітаємо на сайті про тапірів! Дізнайтеся більше про їхню морфологію, харчування та популяцію, відвідавши відповідні розділи.</p>
       
-      <h3 class="h3 text-success mt-4">Розділи сайту:</h3>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a href="pages/morphology.html" class="text-success text-decoration-none">Зовнішній вигляд</a>
-          - Опис зовнішності та особливостей будови тапірів
+      <h3 class="text-xl font-semibold text-green-600 mt-6 mb-3">Розділи сайту:</h3>
+      <ul class="space-y-2">
+        <li class="bg-gray-50 p-3 rounded hover:bg-gray-100 transition-colors">
+          <a href="pages/morphology.html" class="font-medium text-green-600">Зовнішній вигляд</a>
+          <span class="text-gray-600"> - Опис зовнішності та особливостей будови тапірів</span>
         </li>
-        <li class="list-group-item">
-          <a href="pages/nutrition.html" class="text-success text-decoration-none">Харчування</a>
-          - Що їдять тапіри та їх раціон
+        <li class="bg-gray-50 p-3 rounded hover:bg-gray-100 transition-colors">
+          <a href="pages/nutrition.html" class="font-medium text-green-600">Харчування</a>
+          <span class="text-gray-600"> - Що їдять тапіри та їх раціон</span>
         </li>
-        <li class="list-group-item">
-          <a href="pages/population.html" class="text-success text-decoration-none">Ареал</a>
-          - Де живуть тапіри у світі
+        <li class="bg-gray-50 p-3 rounded hover:bg-gray-100 transition-colors">
+          <a href="pages/population.html" class="font-medium text-green-600">Ареал</a>
+          <span class="text-gray-600"> - Де живуть тапіри у світі</span>
         </li>
-        <li class="list-group-item">
-          <a href="pages/photo.html" class="text-success text-decoration-none">Фотогалерея</a>
-          - Колекція фотографій тапірів
+        <li class="bg-gray-50 p-3 rounded hover:bg-gray-100 transition-colors">
+          <a href="pages/photo.html" class="font-medium text-green-600">Фотогалерея</a>
+          <span class="text-gray-600"> - Колекція фотографій тапірів</span>
         </li>
       </ul>
     </section>
   </main>
 
-  <footer class="text-center bg-dark text-white py-2">
+  <footer class="text-center bg-gray-800 text-white py-3 mt-6">
     <p>&copy; 2025 Сайт про тапірів</p>
   </footer>
 </body>
